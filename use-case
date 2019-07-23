@@ -1,0 +1,55 @@
+#Hitchhiking on-demand
+#color #00cc83
+#header     /* font-family: "Proxima Nova",Arial,sans-serif; */
+    /* font-weight: 600;
+
+type
+    user
+    runs
+    user-functions
+
+run
+    once
+
+user
+    super-admin
+    rider-user
+    driver-user
+
+user-function
+    super-admin
+        manage-entire-system
+    rider-user
+        view-run
+        get-on-run
+    driver-user
+        create-run
+        edit-run
+        delete-run
+
+type-defination
+    user
+        first-name
+        last-name
+        email
+        phonenumber
+        password
+        picture
+    driver-user
+        car-number
+        car-brand
+        car-model
+        car-picture
+    run
+        - price
+        - starting-point
+        - end-point
+        - date
+        - time
+
+
+gib-status
+    - en-route
+    - cancelled
+    - on-wait
+    - active
