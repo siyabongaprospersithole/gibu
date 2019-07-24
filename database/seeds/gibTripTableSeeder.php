@@ -16,7 +16,8 @@ class gibTripTableSeeder extends Seeder
         for($i = 1; $i < 50; $i++){
             gibTrip::create([
                 'giber_id' => $faker->numberBetween(1,10),
-                'gib_id' => $faker->numberBetween(1,10)
+                'gib_id' => $faker->numberBetween(1,10),
+                'meetup' => $faker->city()
             ]);
         }
     }

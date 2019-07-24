@@ -12,21 +12,21 @@ class gib extends Model
      * @var array
      */
     protected $fillable = [
-        'driver_id','meetup','source','destination','price', 'seats','date','time',
+        'gibroute_id','driver_id','meetup','price', 'seats','date','time',
     ];
 
-    public function creator()
+    public function driver()
     {
         return $this->belongsTo('App\models\driver', 'driver_id', 'id');
     }
 
-    public function gibers()
+    public function passengers()
     {
-        return $this->hasMany('App\models\gibTrip', 'giber_id', 'id');
+        return $this->hasMany('App\models\gibTrip', 'gib_id', 'id');
     }
 
-    public function seats()
+    public function route()
     {
-        return $this->hasMany('App\Comment', 'foreign_key', 'local_key');
+        return $this->belongsTo('App\models\gibRoute', 'gibroute_id', 'id');
     }
 }

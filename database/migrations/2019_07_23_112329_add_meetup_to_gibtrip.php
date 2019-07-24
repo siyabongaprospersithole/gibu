@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGibTrips extends Migration
+class AddMeetupToGibtrip extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateGibTrips extends Migration
      */
     public function up()
     {
-        Schema::create('gibtrips', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('giber_id');
-            $table->string('gib_id');
-            $table->timestamps();
+        Schema::table('gibtrips', function (Blueprint $table) {
+            $table->string('meetup');
         });
     }
 
@@ -28,6 +25,8 @@ class CreateGibTrips extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('gibtrips');
+        Schema::table('gibtrips', function (Blueprint $table) {
+            $table->dropColumn(['meetup']);
+        });
     }
 }

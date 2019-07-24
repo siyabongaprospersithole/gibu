@@ -14,7 +14,7 @@ class giber extends Model
         return $this->belongsTo('App\User', 'user_id', 'id');
     }
 
-    public function gibs(){
+    public function trips(){
         return $this->hasMany(gibTrip::class, 'giber_id', 'id');
     }
 }

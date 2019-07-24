@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class gibTrip extends Model
 {
-    //
-    protected $filleable = ['giber_id','gib_id'];
+    protected $table = 'gibtrips';
+    protected $fillable = ['giber_id','gib_id','meetup'];
 
-    public function giber()
+    public function giber() //rider
     {
         return $this->belongsTo('App\giber', 'giber_id', 'id');
     }

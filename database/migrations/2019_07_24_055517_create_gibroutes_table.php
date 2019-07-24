@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGibTrips extends Migration
+class CreateGibroutesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateGibTrips extends Migration
      */
     public function up()
     {
-        Schema::create('gibtrips', function (Blueprint $table) {
+        Schema::create('gibroutes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('giber_id');
-            $table->string('gib_id');
+            $table->string('source');
+            $table->string('destination');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateGibTrips extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('gibtrips');
+        Schema::dropIfExists('gibroutes');
     }
 }
