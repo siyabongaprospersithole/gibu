@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
+use App\models\profile;
 
 class RegisterController extends Controller
 {
@@ -59,13 +60,20 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return user::create([
-            'first_name' => $data['first_name'],
-            'last_name' => $data['last_name'],
-            'phonenumber' => $data['phonenumber'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        $faker = \Faker\Factory::create();
+        $gender = $faker->randomElement(['male', 'female']);
+
+        // dd($data);
+        $user = user::create(['phonenumber' => $data['phonenumber'], 'email' => $data['email'], 'password' => Hash::make($data['password'])]);
+        $profile = profile::create(['user_id' => $user->id, 'first_name' => $data['first_name'], 'last_name' => $data['last_name'], 'gender' => $gender, 'city' => $faker->city(), 'country' => $faker->countryCode(), 'img_src' => $faker->imageUrl()]);
+        return $user;
+        // return user::create([
+        //     'first_name' => $data['first_name'],
+        //     'last_name' => $data['last_name'],
+        //     'phonenumber' => $data['phonenumber'],
+        //     'email' => $data['email'],
+        //     'password' => Hash::make($data['password']),
+        // ]);
     }
 
     // generate api token after registration

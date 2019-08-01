@@ -29,6 +29,16 @@ Route::group(['middleware' => 'auth:api'], function () {
     // DELETE GIB
     // Route::delete('gibs/{gib}', 'api\gibs@destroy');
 
+    // ADMIN
+    Route::group(['prefix' => 'admin'], function () {
+        // ROUTES
+        Route::get('gibroutes', 'api\admin\gibroutes@index');
+
+        // GIBS
+
+        // USERS
+    });
+
 
     // ROUTES
     Route::get('routes', 'api\gibroutes@index');    //WORKING
