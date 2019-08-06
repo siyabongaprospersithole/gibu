@@ -21,5 +21,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // AUTH USER
 Route::get('user', function () {
-    return Auth::user();
+    if(\Auth::check())
+        return Auth::user();
+
+    return 'auth error';
+});
+
+Route::get('admin', function () {
+
 });
