@@ -2,7 +2,7 @@
 
 /* @var $factory \Illuminate\Database\Eloquent\Factory */
 
-use App\models\admin;
+use App\admin;
 use Faker\Generator as Faker;
 
 $factory->define(admin::class, function (Faker $faker) {

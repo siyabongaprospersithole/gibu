@@ -1,6 +1,6 @@
 <?php
 
-namespace App\models;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -15,11 +15,11 @@ class driver extends Model
 
     public function gibs()
     {
-        return $this->hasMany('App\models\gib', 'driver_id', 'id');
+        return $this->hasMany('App\gib', 'driver_id', 'id');
     }
 
     public function car()
     {
-        return $this->hasOne('App\models\car', 'driver_id', 'id');
+        return $this->hasOne('App\car', 'driver_id', 'id');
     }
 }

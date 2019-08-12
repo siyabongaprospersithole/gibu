@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\api;
 
-use App\models\gibRoute;
+use App\gibRoute;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -63,7 +63,7 @@ class gibroutes extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\models\gibRoute  $route
+     * @param  \App\gibRoute  $route
      * @return \Illuminate\Http\Response
      */
     public function show(gibRoute $route)
@@ -74,7 +74,7 @@ class gibroutes extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\models\gibRoute  $route
+     * @param  \App\gibRoute  $route
      * @return \Illuminate\Http\Response
      */
     public function edit(gibRoute $route)
@@ -86,7 +86,7 @@ class gibroutes extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\models\gibRoute  $route
+     * @param  \App\gibRoute  $route
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, gibRoute $route)
@@ -97,7 +97,7 @@ class gibroutes extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\models\gibRoute  $route
+     * @param  \App\gibRoute  $route
      * @return \Illuminate\Http\Response
      */
     public function destroy(gibRoute $route)

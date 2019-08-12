@@ -2,9 +2,9 @@
 namespace App\Http\Controllers\api\auth;
 
 use App\user;
-use App\models\profile;
-use App\models\giber;
-use App\models\driver;
+use App\profile;
+use App\giber;
+use App\driver;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;

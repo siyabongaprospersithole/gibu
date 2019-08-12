@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\gibTrip;
+use App\gib;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $gibs = gib::take(10)->get();
+        // dd($gibs);
+        return view('home', compact('gibs', $gibs));
     }
 }

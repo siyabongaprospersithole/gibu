@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\api;
 
-use App\models\gib;
+use App\gib;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
@@ -74,7 +74,7 @@ class gibs extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\models\gib  $gib
+     * @param  \App\gib  $gib
      * @return \Illuminate\Http\Response
      */
     public function show(gib $gib)
@@ -85,7 +85,7 @@ class gibs extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\models\gib  $gib
+     * @param  \App\gib  $gib
      * @return \Illuminate\Http\Response
      */
     public function edit(gib $gib)
@@ -97,7 +97,7 @@ class gibs extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\models\gib  $gib
+     * @param  \App\gib  $gib
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, gib $gib)
@@ -109,7 +109,7 @@ class gibs extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\models\gib  $gib
+     * @param  \App\gib  $gib
      * @return \Illuminate\Http\Response
      */
     public function destroy(gib $gib)

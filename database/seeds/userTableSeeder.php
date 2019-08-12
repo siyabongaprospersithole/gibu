@@ -2,10 +2,10 @@
 use App\user;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
-use App\models\profile;
-use App\models\giber;
-use App\models\driver;
-use App\models\admin;
+use App\profile;
+use App\giber;
+use App\driver;
+use App\admin;
 
 class userTableSeeder extends Seeder
 {

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\models\gibRides;
+use App\gibRides;
 use Illuminate\Http\Request;
 
 class GibRidesController extends Controller
@@ -41,7 +41,7 @@ class GibRidesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\models\gibRides  $gibRides
+     * @param  \App\gibRides  $gibRides
      * @return \Illuminate\Http\Response
      */
     public function show(gibRides $gibRides)
@@ -52,7 +52,7 @@ class GibRidesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\models\gibRides  $gibRides
+     * @param  \App\gibRides  $gibRides
      * @return \Illuminate\Http\Response
      */
     public function edit(gibRides $gibRides)
@@ -64,7 +64,7 @@ class GibRidesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\models\gibRides  $gibRides
+     * @param  \App\gibRides  $gibRides
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, gibRides $gibRides)
@@ -75,7 +75,7 @@ class GibRidesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\models\gibRides  $gibRides
+     * @param  \App\gibRides  $gibRides
      * @return \Illuminate\Http\Response
      */
     public function destroy(gibRides $gibRides)

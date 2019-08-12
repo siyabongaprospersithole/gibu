@@ -2,7 +2,7 @@
 
 /* @var $factory \Illuminate\Database\Eloquent\Factory */
 
-use App\models\driver;
+use App\driver;
 use Faker\Generator as Faker;
 
 $factory->define(driver::class, function (Faker $faker) {

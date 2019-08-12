@@ -2,7 +2,7 @@
 
 /* @var $factory \Illuminate\Database\Eloquent\Factory */
 
-use App\models\gibRoute;
+use App\gibRoute;
 use Faker\Generator as Faker;
 
 $factory->define(gibRoute::class, function (Faker $faker) {

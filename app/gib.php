@@ -1,6 +1,6 @@
 <?php
 
-namespace App\models;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -17,16 +17,16 @@ class gib extends Model
 
     public function driver()
     {
-        return $this->belongsTo('App\models\driver', 'driver_id', 'id');
+        return $this->belongsTo('App\driver', 'driver_id', 'id');
     }
 
     public function passengers()
     {
-        return $this->hasMany('App\models\gibTrip', 'gib_id', 'id');
+        return $this->hasMany('App\gibTrip', 'gib_id', 'id');
     }
 
     public function route()
     {
-        return $this->belongsTo('App\models\gibRoute', 'gibroute_id', 'id');
+        return $this->belongsTo('App\gibRoute', 'gibroute_id', 'id');
     }
 }

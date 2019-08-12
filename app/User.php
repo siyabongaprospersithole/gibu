@@ -52,17 +52,17 @@ class user extends Authenticatable
 
     public function driver()
     {
-        return $this->hasOne('App\models\driver', 'user_id', 'id');
+        return $this->hasOne('App\driver', 'user_id', 'id');
     }
 
     public function giber()
     {
-        return $this->hasOne('App\models\giber', 'user_id', 'id');
+        return $this->hasOne('App\giber', 'user_id', 'id');
     }
 
     public function superAdmin()
     {
-        return $this->hasOne('App\models\admin', 'user_id', 'id');
+        return $this->hasOne('App\admin', 'user_id', 'id');
     }
 
     public function isAdmin(){
@@ -75,6 +75,6 @@ class user extends Authenticatable
 
     public function profile()
     {
-        return $this->hasOne('App\models\profile', 'user_id', 'id');
+        return $this->hasOne('App\profile', 'user_id', 'id');
     }
 }

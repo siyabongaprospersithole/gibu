@@ -4,7 +4,7 @@ namespace App\Http\Controllers\api;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
-use App\models\gibTrip;
+use App\gibTrip;
 
 class gibtrips extends Controller
 {
@@ -54,7 +54,7 @@ class gibtrips extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\models\gibTrip  $gibTrip
+     * @param  \App\gibTrip  $gibTrip
      * @return \Illuminate\Http\Response
      */
     public function show(gibTrip $gibtrip)
@@ -69,7 +69,7 @@ class gibtrips extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\models\gibTrip  $gibTrip
+     * @param  \App\gibTrip  $gibTrip
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, gibTrip $gibTrip)
@@ -80,7 +80,7 @@ class gibtrips extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\models\gibTrip  $gibTrip
+     * @param  \App\gibTrip  $gibTrip
      * @return \Illuminate\Http\Response
      */
     public function destroy(gibTrip $gibTrip)
@@ -91,7 +91,7 @@ class gibtrips extends Controller
     /**
      * returns active rider trips.
      *
-     * @param  \App\models\gibTrip  $gibTrip
+     * @param  \App\gibTrip  $gibTrip
      * @return \Illuminate\Http\Response
      */
     public function active()
@@ -102,7 +102,7 @@ class gibtrips extends Controller
     /**
      * returns draft rider trips.
      *
-     * @param  \App\models\gibTrip  $gibTrip
+     * @param  \App\gibTrip  $gibTrip
      * @return \Illuminate\Http\Response
      */
     public function draft()
@@ -113,7 +113,7 @@ class gibtrips extends Controller
     /**
      * returns canceled rider trips.
      *
-     * @param  \App\models\gibTrip  $gibTrip
+     * @param  \App\gibTrip  $gibTrip
      * @return \Illuminate\Http\Response
      */
     public function canceled()
@@ -124,7 +124,7 @@ class gibtrips extends Controller
     /**
      * returns completed rider trips.
      *
-     * @param  \App\models\gibTrip  $gibTrip
+     * @param  \App\gibTrip  $gibTrip
      * @return \Illuminate\Http\Response
      */
     public function completed()

@@ -8,10 +8,12 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     {{-- <title>{{ config('app.name', 'Laravel') }}</title> --}}
-    <title>you pack it we move it</title>
+    <title>Gibu | Get Moving</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <link rel="shortcut icon" href="{{ asset('gibu.png') }}">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -25,7 +27,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src={{ asset('gibu-logo-2.png') }} alt="" srcset="" style="
+                    <img src={{ asset('gibu-transparent.png') }} alt="" srcset="" style="
                     height: 30px;
                 ">
                 </a>
@@ -58,6 +60,10 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a href="" class="dropdown-item">
+                                        account
+                                    </a>
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\api\admin;
 
-use App\models\gibRoute;
+use App\gibRoute;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -32,7 +32,7 @@ class gibroutes extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\models\gibRoute  $gibroute
+     * @param  \App\gibRoute  $gibroute
      * @return \Illuminate\Http\Response
      */
     public function show(gibRoute $gibroute)
@@ -44,7 +44,7 @@ class gibroutes extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\models\gibRoute  $gibroute
+     * @param  \App\gibRoute  $gibroute
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, gibRoute $gibroute)
@@ -55,7 +55,7 @@ class gibroutes extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\models\gibRoute  $gibroute
+     * @param  \App\gibRoute  $gibroute
      * @return \Illuminate\Http\Response
      */
     public function destroy(gibRoute $gibroute)

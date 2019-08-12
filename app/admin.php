@@ -1,10 +1,10 @@
 <?php
 
-namespace App\models;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class routes extends Model
+class admin extends Model
 {
     //
 }

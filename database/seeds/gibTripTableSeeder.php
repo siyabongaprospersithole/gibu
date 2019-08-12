@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\models\gibTrip;
+use App\gibTrip;
 
 class gibTripTableSeeder extends Seeder
 {

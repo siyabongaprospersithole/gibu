@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\models\gib;
+use App\gib;
 
 class gibTableSeeder extends Seeder
 {

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\models\gibRoute;
+use App\gibRoute;
 
 class gibRouteTableSeeder extends Seeder
 {

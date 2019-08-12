@@ -1,11 +1,10 @@
 <?php
 Route::get('/', function () {
+    if(\Auth::check()){
+        return redirect('/home');
+    }
     return view('common/home');
 });
-
-// Route::get('/home', function () {
-//     return view('common/home');
-// });
 
 
 Auth::routes();

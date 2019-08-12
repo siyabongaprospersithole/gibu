@@ -1,6 +1,6 @@
 <?php
 
-namespace App\models;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,6 +10,6 @@ class car extends Model
 
     public function driver()
     {
-        return $this->belongsTo('App\models\driver', 'driver_id', 'id');
+        return $this->belongsTo('App\driver', 'driver_id', 'id');
     }
 }

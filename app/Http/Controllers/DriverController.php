@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\models\driver;
+use App\driver;
 use Illuminate\Http\Request;
 
 class DriverController extends Controller
@@ -41,7 +41,7 @@ class DriverController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\models\driver  $driver
+     * @param  \App\driver  $driver
      * @return \Illuminate\Http\Response
      */
     public function show(driver $driver)
@@ -52,7 +52,7 @@ class DriverController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\models\driver  $driver
+     * @param  \App\driver  $driver
      * @return \Illuminate\Http\Response
      */
     public function edit(driver $driver)
@@ -64,7 +64,7 @@ class DriverController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\models\driver  $driver
+     * @param  \App\driver  $driver
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, driver $driver)
@@ -75,7 +75,7 @@ class DriverController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\models\driver  $driver
+     * @param  \App\driver  $driver
      * @return \Illuminate\Http\Response
      */
     public function destroy(driver $driver)

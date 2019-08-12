@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\models\rider;
+use App\rider;
 use Illuminate\Http\Request;
 
 class RiderController extends Controller
@@ -41,7 +41,7 @@ class RiderController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\models\rider  $rider
+     * @param  \App\rider  $rider
      * @return \Illuminate\Http\Response
      */
     public function show(rider $rider)
@@ -52,7 +52,7 @@ class RiderController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\models\rider  $rider
+     * @param  \App\rider  $rider
      * @return \Illuminate\Http\Response
      */
     public function edit(rider $rider)
@@ -64,7 +64,7 @@ class RiderController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\models\rider  $rider
+     * @param  \App\rider  $rider
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, rider $rider)
@@ -75,7 +75,7 @@ class RiderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\models\rider  $rider
+     * @param  \App\rider  $rider
      * @return \Illuminate\Http\Response
      */
     public function destroy(rider $rider)
