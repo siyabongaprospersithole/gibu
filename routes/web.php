@@ -8,15 +8,7 @@ Route::get('/', function () {
 
 
 Auth::routes();
-
-// JOINED GIBS
-
 Route::get('/home', 'HomeController@index')->name('home');
-// Route::get('/giber/gibs', 'HomeController@index')->name('home');
-
-// // POSTED GIBS
-// Route::get('/driver/gibs', 'HomeController@index')->name('home');
-// Route::get('/driver/gibs/active', 'HomeController@index')->name('home');
 
 // AUTH USER
 Route::get('user', function () {
@@ -28,4 +20,21 @@ Route::get('user', function () {
 
 Route::get('admin', function () {
 
+});
+
+
+// settings group
+Route::group(['prefix' => 'settings'], function () {
+    Route::get('profile', 'settings@index')->name('settings');
+    Route::get('account', 'settings@account')->name('account');
+    Route::get('security', 'settings@security')->name('security');
+    Route::get('emails', 'settings@emails')->name('emails');
+    Route::get('notifications', 'settings@notifications')->name('notifications');
+});
+
+// notifications
+Route::group(['prefix' => 'notifications'], function () {
+    Route::get('/', 'notifications@index')->name('notifications-unread');
+    Route::get('read', 'notifications@read')->name('notifications-read');
+    Route::get('all', 'notifications@all')->name('notifications-all');
 });

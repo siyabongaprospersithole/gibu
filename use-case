@@ -53,3 +53,9 @@ gib-status
     - cancelled
     - on-wait
     - active
+
+
+gib-types
+    - short-distance < 50K
+    - midium-distance (50K to 200K)
+    - long-distance > 200K

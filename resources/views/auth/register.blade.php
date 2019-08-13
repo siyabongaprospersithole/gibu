@@ -1,7 +1,14 @@
 @extends('layouts.app')
-
+<style>
+nav.navbar.navbar-expand-md.navbar-light.bg-white.shadow-sm {
+    display: none;
+}
+.btn-indigo{
+    box-shadow: 0 0 0 0.2rem rgba(52,144,220,.25);
+}
+</style>
 @section('content')
-<div class="container">
+{{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -101,5 +108,72 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
+
+
+<div class="container" style="margin-top: 10%;">
+        <div class="row wow fadeIn">
+          <div class="col-md-6 mb-4 white-text text-center text-md-left">
+            <h1 class="display-4 font-weight-bold">Sign UP</h1>
+            <hr class="hr-light">
+            <p>
+              <strong>For the more information</strong>
+            </p>
+            <p class="mb-4 d-none d-md-block">
+              <strong>Quickly get information from new leads and customers by signing up .WIth their information, you can funnel them into new accounts in an instant.Follow us on FACEBOOK</strong>
+            </p>
+            <a href="{{ route('login') }}" target="_blank"  class="btn btn-indigo btn-lg">Login
+              <i class="fa fa-facebook ml-2"></i>
+            </a>
+          </div>
+          <div class="col-md-6 col-xl-5 mb-4">
+            <div class="card" style="    border: 1px solid rgba(0,0,0,.125);">
+              <div class="card-body">
+                <form method="POST" action="{{ route('register') }}">
+                        @csrf
+                  <p class="h4 text-center mb-4">Sign up</p>
+                  <div class="md-form">
+                        <label for="materialFormRegisterNameEx">Your name</label>
+                     <i class="fa fa-user prefix grey-text"></i>
+                     <input type="text" id="materialFormRegisterNameEx" class="form-control">
+                     <label for=""></label>
+                  </div>
+                  <div class="md-form">
+                        <label for="materialFormRegisterEmailEx">Your email</label>
+                     <i class="fa fa-envelope prefix grey-text"></i>
+                     <input type="email" id="materialFormRegisterEmailEx" class="form-control">
+                     <label for=""></label>
+                    </div>
+                  <div class="md-form">
+                        <label for="materialFormRegisterConfirmEx">Confirm your email</label>
+                     <i class="fa fa-exclamation-triangle prefix grey-text"></i>
+                     <input type="email" id="materialFormRegisterConfirmEx" class="form-control">
+                     <label for=""></label>
+                    </div>
+                  <div class="md-form">
+                        <label for="materialFormRegisterPasswordEx">Your password</label>
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    <input type="password" id="materialFormRegisterPasswordEx" class="form-control">
+                    <label for=""></label>
+                  </div>
+                  <div class="md-form">
+                        <label for="materialFormRegisterPasswordEx">Confirm Your password</label>
+                        <i class="fa fa-exclamation-triangle prefix grey-text"></i>
+                        <input type="password" id="materialFormRegisterConfirmEx" class="form-control">
+                        <label for=""></label>
+                    </div>
+                  <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="defaultCheck12">
+                        <label for="defaultCheck12" class="grey-text">Accept the
+                            <a href="#" class="blue-text"> Terms and Conditions</a>
+                        </label>
+                    </div>
+                  <div class="text-center mt-4">
+                   <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#myModal">Register</button>
+               </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 @endsection

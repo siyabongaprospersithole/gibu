@@ -5,8 +5,17 @@ namespace App\Http\Controllers;
 use App\profile;
 use Illuminate\Http\Request;
 
-class ProfileController extends Controller
+class settings extends Controller
 {
+        /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +23,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        //
+        return view('settings.profile');
     }
 
     /**
@@ -22,9 +31,9 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function account()
     {
-        //
+        return view('settings.account');
     }
 
     /**
@@ -33,9 +42,9 @@ class ProfileController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function security(Request $request)
     {
-        //
+        return view('settings.security');
     }
 
     /**
@@ -44,9 +53,9 @@ class ProfileController extends Controller
      * @param  \App\profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function show(profile $profile)
+    public function emails(profile $profile)
     {
-        //
+        return view('settings.emails');
     }
 
     /**
@@ -55,31 +64,8 @@ class ProfileController extends Controller
      * @param  \App\profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function edit(profile $profile)
+    public function notifications(profile $profile)
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\profile  $profile
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, profile $profile)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\profile  $profile
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(profile $profile)
-    {
-        //
+        return view('settings.notifications');
     }
 }
