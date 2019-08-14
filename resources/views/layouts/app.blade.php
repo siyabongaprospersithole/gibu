@@ -186,6 +186,28 @@
                             </li>
                         </a>
 
+                        <li class="nav-item dropdown" style="
+padding: 0.1rem 1rem;
+">
+                            <a id="createDropDown" class="nav-link dropdown-toggle" href="#" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <img src="{{ asset('img/default/add.png') }}" alt="" sizes="" srcset="" height="20">
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="createDropDown">
+                                <a href="" class="dropdown-item">
+                                    Request a gib
+                                </a>
+
+                                <a href="" class="dropdown-item">
+                                    Create a gib
+                                </a>
+                                <a href="" class="dropdown-item">
+                                    Add car
+                                </a>
+                            </div>
+                        </li>
+
 
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"

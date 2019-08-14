@@ -10,7 +10,7 @@
     }
 
     .underline-nav-item.selected {
-        border-bottom-color: #e36209;
+        border-bottom-color: #00cc83;
         color: #24292e;
         font-weight: 600;
     }
@@ -29,19 +29,46 @@
     .underline-nav {
         display: flex;
     }
+
+    .card-user-image {
+        margin: auto;
+        text-align: left;
+        width: 260;
+        height: 260;
+    }
+
+    .user-name {
+        padding-top: 10px;
+        font-size: 26px;
+    }
+
+    .page-content.container-xl.clearfix {
+        max-width: 1280px;
+        margin: auto;
+    }
 </style>
 @section('script-import')
 <script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
 @endsection
 @section('content')
-<div class="page-content container clearfix">
+<div class="page-content container-xl clearfix">
     <div class="col-3 float-left pr-4">
         <div class="card-group-item">
-            <header class="card-header card-header-profile">
-                <h5 class="title">Notifications</h5>
-            </header>
             <div class="filter-content">
+                <div class="card-user-image">
+                    <img width="260" height="260" src="https://www.w3schools.com/w3images/team2.jpg" alt="John"
+                        style="object-fit: cover;">
 
+                    <div class="user-verification">
+                        {{-- display user verification status here --}}
+                    </div>
+
+                    <div class="user-name">
+                        <p>
+                            simphiwe hlabisa
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

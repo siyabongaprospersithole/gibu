@@ -1,12 +1,10 @@
 @extends('profile.layout')
 @section('profile-content')
-<div class="Subhead mt-0 mb-0">
-    <h2 id="public-profile-heading" class="Subhead-heading">overview</h2>
+<div class="followings">
+    <p class="mt-4">That’s it. You’ve reached the end of
+        your followings.</p>
 </div>
 @endsection
-
-
-{{-- change selection --}}
 @section('script')
 <script>
     $(document).ready(function() {
