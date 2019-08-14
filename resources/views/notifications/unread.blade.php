@@ -1,7 +1,7 @@
 @extends('notifications.layout')
 @section('notifications-content')
 <div class="Subhead mt-0 mb-0">
-        <h2 id="public-profile-heading" class="Subhead-heading">Account Settings</h2>
+    <h2 id="public-profile-heading" class="Subhead-heading">Unread notifications</h2>
 </div>
 @endsection
 

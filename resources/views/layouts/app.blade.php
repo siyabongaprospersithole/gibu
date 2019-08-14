@@ -44,6 +44,11 @@
             line-height: 1.5;
         }
 
+        a {
+            color: rgb(3, 102, 214);
+            text-decoration: none;
+        }
+
         .row {
             justify-content: center;
         }
@@ -168,17 +173,18 @@
                         </li>
                         @endif
                         @else
+                        <a href="{{ route('notifications-unread') }}">
+                            <li class="nav-item notification-image">
 
-                        <li class="nav-item notification-image">
-                            <a href="{{ route('notifications-unread') }}">
                                 <span class="notification-status unread">
 
                                 </span>
                                 <img src="{{ asset('img/default/notification.png') }}" style="height: 25px;" alt=""
                                     srcset="">
-                            </a>
 
-                        </li>
+
+                            </li>
+                        </a>
 
 
                         <li class="nav-item dropdown">
@@ -188,14 +194,14 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a href="" class="dropdown-item">
+                                <a href="{{ route('view-profile', ['id'=> \Auth::user()->id]) }}" class="dropdown-item">
                                     <span class="signed-in-as dropdown-info">Signed in as </span>
                                     <br>
                                     <span class="user-name  dropdown-info">{{ Auth::user()->profile->first_name }}
                                     </span>
                                 </a>
 
-                                <a href="" class="dropdown-item">
+                                <a href="{{ route('view-profile', ['id'=> \Auth::user()->id]) }}" class="dropdown-item">
                                     Your profile
                                 </a>
 

@@ -1,7 +1,7 @@
-@extends('notifications.layout')
-@section('notifications-content')
+@extends('profile.layout')
+@section('profile-content')
 <div class="Subhead mt-0 mb-0">
-    <h2 id="public-profile-heading" class="Subhead-heading">All notifications</h2>
+    <h2 id="public-profile-heading" class="Subhead-heading">overview</h2>
 </div>
 @endsection
 
@@ -10,7 +10,7 @@
 @section('script')
 <script>
     $(document).ready(function() {
-        var i = 2;
+        var i = 4;
             $("#memnav a").eq(i).addClass('selected');
         });
 </script>
