@@ -191,7 +191,8 @@ padding: 0.1rem 1rem;
 ">
                             <a id="createDropDown" class="nav-link dropdown-toggle" href="#" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <img src="{{ asset('img/default/add.png') }}" alt="" sizes="" srcset="" height="20">
+                                <img src="{{ asset('img/default/add.png') }}" alt="" sizes="" srcset="" style="padding-top: 4px;
+    height: 22px;">
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="createDropDown">

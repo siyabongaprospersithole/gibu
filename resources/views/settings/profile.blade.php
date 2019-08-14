@@ -6,6 +6,16 @@
         min-height: 17px;
         margin: 4px 0px 2px;
     }
+
+    .profile-edit {
+        position: absolute !important;
+        bottom: 110 !important;
+        color: white;
+        padding: 5px;
+        left: 60 !important;
+        background-color: #24292e !important;
+        border-radius: 6px !important;
+    }
 </style>
 @section('settings-content')
 <div class="Subhead mt-0 mb-0">
@@ -72,8 +82,21 @@
         </form>
     </div>
 
-    <div class="col-4 d-inline-block">
 
+
+    <div class="col-4 d-inline-block">
+        <div class="card-user-image" style="float: right; margin-top: 10px;">
+            <div class="change-imgage-text">
+                <label class="d-block mb-2">Profile picture</label>
+            </div>
+            <img width="200" height="200" src="https://www.w3schools.com/w3images/team2.jpg" alt="John"
+                style="object-fit: cover; ">
+
+            <div class="profile-edit">
+                <span> edit</span>
+            </div>
+
+        </div>
     </div>
 </div>
 @endsection

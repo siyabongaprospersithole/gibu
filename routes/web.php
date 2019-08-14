@@ -9,6 +9,7 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/home/load_more', 'HomeController@loadMore')->name('home-load_more');
 
 // AUTH USER
 Route::get('user', function () {
