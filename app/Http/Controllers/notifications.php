@@ -23,7 +23,7 @@ class notifications extends Controller
      */
     public function index()
     {
-        // return view('notifications.unread');
+        return view('notifications.unread');
     }
 
     /**
@@ -33,7 +33,7 @@ class notifications extends Controller
      */
     public function read()
     {
-        // return view('notifications.unread');
+        return view('notifications.read');
     }
 
     /**
@@ -44,6 +44,6 @@ class notifications extends Controller
      */
     public function all(Request $request)
     {
-        // return view('notifications.unread');
+        return view('notifications.all');
     }
 }
