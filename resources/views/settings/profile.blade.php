@@ -7,14 +7,86 @@
         margin: 4px 0px 2px;
     }
 
-    .profile-edit {
+    .mt-3 {
+        margin-top: 16px !important;
+    }
+
+    .position-relative {
+        position: relative !important;
+    }
+
+    .upload {
+        background-color: #eff3f6;
+        background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
+        color: #24292e;
+    }
+
+    .upload {
+        -moz-appearance: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-appearance: none;
+        -webkit-user-select: none;
+        appearance: none;
+        background-position: -1px -1px;
+        background-repeat: repeat-x;
+        background-size: 110% 110%;
+        border: 1px solid rgba(27, 31, 35, .2);
+        border-radius: .25em;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+        padding: 6px 12px;
+        position: relative;
+        user-select: none;
+        vertical-align: middle;
+        white-space: nowrap;
+    }
+
+    label {
+        font-weight: 600;
+    }
+
+    .upload .manual-file-chooser {
+        line-height: 34px;
+        padding: 0;
+        top: 0;
+    }
+
+    .left-0 {
+        left: 0 !important;
+    }
+
+    .top-0 {
+        top: 0 !important;
+    }
+
+    .ml-0,
+    .mx-0 {
+        margin-left: 0 !important;
+    }
+
+    .height-full {
+        height: 100% !important;
+    }
+
+    .width-full {
+        width: 100% !important;
+    }
+
+    .position-absolute {
         position: absolute !important;
-        bottom: 110 !important;
-        color: white;
+    }
+
+    .manual-file-chooser {
+        cursor: pointer;
+        margin-left: -80px;
+        opacity: .0001;
         padding: 5px;
-        left: 60 !important;
-        background-color: #24292e !important;
-        border-radius: 6px !important;
+        position: absolute;
+        width: 240px;
     }
 </style>
 @section('settings-content')
@@ -86,14 +158,25 @@
 
     <div class="col-4 d-inline-block">
         <div class="card-user-image" style="float: right; margin-top: 10px;">
-            <div class="change-imgage-text">
-                <label class="d-block mb-2">Profile picture</label>
-            </div>
             <img width="200" height="200" src="https://www.w3schools.com/w3images/team2.jpg" alt="John"
                 style="object-fit: cover; ">
 
-            <div class="profile-edit">
-                <span> edit</span>
+            <div class="change-imgage-text">
+                <div class="avatar-upload">
+                    <label class="position-relative upload button-change-avatar mt-3">
+                        Upload new picture
+                        <input type="file"
+                            class="manual-file-chooser width-full height-full ml-0 js-manual-file-chooser left-0 top-0 position-absolute">
+                    </label>
+
+                    <div class="upload-state loading">
+                        <button type="button" class=" mt-3 upload" disabled="">
+                            <img width="16" height="16" alt="" class="v-align-text-bottom"
+                                src="https://github.githubassets.com/images/spinners/octocat-spinner-32.gif">
+                            Uploading...
+                        </button>
+                    </div>
+                </div>
             </div>
 
         </div>

@@ -18,6 +18,7 @@
 
     .available-seats {
         float: right;
+        cursor: pointer;
     }
 
     .available-seats:hover .tooltiptext {
@@ -32,12 +33,10 @@
         text-align: center;
         border-radius: 6px;
         padding: 5px 5px;
-
-        /* Position the tooltip */
         position: absolute;
         z-index: 1;
-        top: 100%;
-        left: 52%;
+        top: 95%;
+        left: 72%;
     }
 
     div#load_more {
