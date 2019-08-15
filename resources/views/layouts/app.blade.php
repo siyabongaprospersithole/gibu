@@ -60,6 +60,12 @@
 
         .card {
             border: solid #f7f7f9;
+
+        }
+
+        .gibu-card {
+            width: 48%;
+            float: left;
         }
 
         html {
@@ -111,7 +117,8 @@
         }
 
         li.nav-item.notification-image {
-            padding: .5rem 1rem;
+            padding-top: 8px;
+            padding-right: 8px;
             position: relative;
         }
 
@@ -123,16 +130,114 @@
             background-clip: padding-box;
             background-image: linear-gradient(#00cc83, #00cc83);
             border-radius: 100%;
-            height: 12px;
-            left: 30px;
+            height: 10px;
+            left: 10px;
             position: absolute;
-            top: 7px;
-            width: 12px;
+            top: 10px;
+            width: 10px;
             z-index: 2;
         }
 
         .notification-image .notification-status .unread {
             display: inline-block;
+        }
+
+        .px-3 {
+            padding-right: 16px !important;
+        }
+
+        .pl-3,
+        .px-3 {
+            padding-left: 16px !important;
+        }
+
+        .width-full {
+            width: 100% !important;
+        }
+
+        .container-lg,
+        .container-xl {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .container-lg {
+            max-width: 1125px;
+        }
+
+        .d-flex {
+            display: flex !important;
+        }
+
+        .f6 {
+            font-size: 12px !important;
+        }
+
+        .pt-6 {
+            padding-top: 40px !important;
+        }
+
+        .pb-2 {
+            padding-bottom: 8px !important;
+        }
+
+        .position-relative {
+            position: relative !important;
+        }
+
+        .flex-justify-between {
+            justify-content: space-between !important;
+        }
+
+        .text-gray {
+            color: #586069 !important;
+        }
+
+        .border-gray-light {
+            border-color: #eaecef !important;
+        }
+
+        .border-top {
+            border-top: 1px solid #e1e4e8 !important;
+        }
+
+        .d-flex {
+            display: flex !important;
+        }
+
+        .list-style-none {
+            list-style: none !important;
+        }
+
+        .flex-wrap {
+            flex-wrap: wrap !important;
+        }
+
+        ol,
+        ul {
+            margin-bottom: 0;
+            margin-top: 0;
+            padding-left: 0;
+        }
+
+        .mr-3 {
+            margin-right: 16px !important;
+        }
+
+        .d-flex {
+            display: flex !important;
+        }
+
+        .pb-6 {
+            padding-bottom: 40px !important;
+        }
+
+        .flex-justify-center {
+            justify-content: center !important;
+        }
+
+        button.load_more {
+            margin-top: 20px;
         }
     </style>
 
@@ -140,12 +245,12 @@
 </head>
 
 <body>
-    <div id="app" style="background-color: white">
+    <div id="app" style="background-color: white; padding-bottom: 10px;">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="header-container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img src={{ asset('img/logos/gibu-transparent.png') }} alt="" srcset="" style="
-                    height: 30px;
+                    height: 27;
                 ">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -179,20 +284,19 @@
                                 <span class="notification-status unread">
 
                                 </span>
-                                <img src="{{ asset('img/default/notification.png') }}" style="height: 25px;" alt=""
+                                <img src="{{ asset('img/default/notification.png') }}" style="height: 16px;" alt=""
                                     srcset="">
 
 
                             </li>
                         </a>
 
-                        <li class="nav-item dropdown" style="
-padding: 0.1rem 1rem;
-">
+                        <li class="nav-item dropdown">
                             <a id="createDropDown" class="nav-link dropdown-toggle" href="#" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <img src="{{ asset('img/default/add.png') }}" alt="" sizes="" srcset="" style="padding-top: 4px;
-    height: 22px;">
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre
+                                style="padding-top: 13px;">
+                                <img src="{{ asset('img/default/add.png') }}" alt="" sizes="" srcset=""
+                                    style="height: 14px;">
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="createDropDown">
@@ -213,7 +317,9 @@ padding: 0.1rem 1rem;
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->profile->first_name }} <span class="caret"></span>
+                                <img style="border-radius: 10px;"
+                                    src="https://avatars1.githubusercontent.com/u/12032477?s=40&u=11fc2fd8af37db7df40162e988c76e0956f6db5c&v=4"
+                                    alt="" srcset="" height="20"> <span class="caret"></span>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -256,6 +362,43 @@ padding: 0.1rem 1rem;
         <main class="py-4">
             @yield('content')
         </main>
+    </div>
+
+    <div class="footer container-lg width-full px-3">
+        <div
+            class="position-relative d-flex flex-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light">
+            <ul class="list-style-none d-flex flex-wrap">
+                <li class="mr-3">
+                    © 2019
+                    <span title="0.28281s from unicorn-5b56cc8bb4-kn2dh">Gibu</span>
+                    , Inc.
+                </li>
+
+                <li class="mr-3">
+                    <a href="">Terms</a>
+                </li>
+
+                <li class="mr-3">
+                    <a href="">Privacy</a>
+                </li>
+
+                <li class="mr-3">
+                    <a href="">Security</a>
+                </li>
+
+                <li class="mr-3">
+                    <a href="">Status</a>
+                </li>
+
+                <li class="mr-3">
+                    <a href="">Help</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="d-flex flex-justify-center pb-6">
+
+        </div>
     </div>
 </body>
 @yield('script')

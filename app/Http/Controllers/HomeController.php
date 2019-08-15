@@ -48,7 +48,7 @@ class HomeController extends Controller
             if (!$data->isEmpty()) {
                 foreach ($data as $gib) {
                     $output .= '
-        <div class="card" style="width: 21rem;">
+        <div class="card gibu-card" >
                 <div class="card-body">
                     <h5 class="card-title">' . $gib->route->source . '</h5>
                     <h6 class="card-subtitle mb-2 text-muted">To</h6>
@@ -78,13 +78,13 @@ class HomeController extends Controller
                 }
                 $output .= '
        <div id="load_more">
-        <button type="button" name="load_more_button" class="btn btn-success form-control" data-id="' . $last_id . '" id="load_more_button">Load More</button>
+        <button type="button" name="load_more_button" class="load_more btn btn-success form-control" data-id="' . $last_id . '" id="load_more_button">Load More</button>
        </div>
        ';
             } else {
                 $output .= '
-       <div id="load_more">
-        <button type="button" name="load_more_button" class="btn btn-info form-control">No Data Found</button>
+       <div id="load_more" >
+        <button type="button" name="load_more_button" class="load_more btn btn-info form-control">No Data Found</button>
        </div>
        ';
             }

@@ -121,7 +121,7 @@
                         </div>
                         <br>
                         <p>
-                            <button type="submit" class="btn btn-primary">Update profile</button>
+                            <button type="submit" class="btn btn-primary">Register</button>
                         </p>
                         {{-- <div class="text-center mt-4">
                             <button class="btn btn-primary" type="submit">Register</button>

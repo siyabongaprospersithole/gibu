@@ -41,8 +41,12 @@
     }
 
     div#load_more {
-        width: 80%;
-        margin: auto;
+        margin-top: 20px;
+        margin: 10px;
+    }
+
+    #post_data {
+        display: inline;
     }
 </style>
 @section('content')
