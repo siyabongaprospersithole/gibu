@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Http\Controllers\Auth;
+
 use App\user;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -77,7 +79,8 @@ class RegisterController extends Controller
     }
 
     // generate api token after registration
-    protected function registered(Request $request, $user){
+    protected function registered(Request $request, $user)
+    {
         $user->generateToken();
 
         // return response()->json(['data' => $user->toArray()], 201);

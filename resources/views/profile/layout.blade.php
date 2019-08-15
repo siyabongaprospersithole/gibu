@@ -46,6 +46,10 @@
         max-width: 1280px;
         margin: auto;
     }
+
+    span.profile-item {
+        padding-right: 10px;
+    }
 </style>
 @section('script-import')
 <script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
@@ -77,14 +81,20 @@
     <div class="col-9 float-left">
         <div class="profile-tabs">
             <nav class="underline-nav" id="memnav">
-                <a href="{{ route('view-profile',['id'=>\Auth::user()->id]) }}" class="underline-nav-item">Overview</a>
-                <a href="{{ route('view-gibs',['id'=>\Auth::user()->id]) }}" class="underline-nav-item">Gibu Rides</a>
-                <a href="{{ route('view-trips',['id'=>\Auth::user()->id]) }}" class="underline-nav-item">Gibu Trips</a>
-                <a href="{{ route('view-cars',['id'=>\Auth::user()->id]) }}" class="underline-nav-item">Cars</a>
-                <a href="{{ route('view-followers',['id'=>\Auth::user()->id]) }}"
-                    class="underline-nav-item">Followers</a>
-                <a href="{{ route('view-following',['id'=>\Auth::user()->id]) }}"
-                    class="underline-nav-item">Following</a>
+                <a href="{{ route('view-profile',['id'=>\Auth::user()->id]) }}" class="underline-nav-item"> <span
+                        class="profile-item">Overview</span></a>
+                <a href="{{ route('view-gibs',['id'=>\Auth::user()->id]) }}" class="underline-nav-item"><span
+                        class="profile-item">Gibu Rides</span><span class="badge badge-light round">15</span></a></a>
+                <a href="{{ route('view-trips',['id'=>\Auth::user()->id]) }}" class="underline-nav-item"><span
+                        class="profile-item">Gibu
+                        Trips</span>
+                    <span class="badge badge-light round">3</span></a>
+                <a href="{{ route('view-cars',['id'=>\Auth::user()->id]) }}" class="underline-nav-item"><span
+                        class="profile-item">Cars</span><span class="badge badge-light round">1</span></a></a>
+                <a href="{{ route('view-followers',['id'=>\Auth::user()->id]) }}" class="underline-nav-item"><span
+                        class="profile-item">Followers</span><span class="badge badge-light round">3</span></a></a>
+                <a href="{{ route('view-following',['id'=>\Auth::user()->id]) }}" class="underline-nav-item"><span
+                        class="profile-item">Following</span><span class="badge badge-light round">0</span></a></a>
             </nav>
         </div>
         @yield('profile-content')

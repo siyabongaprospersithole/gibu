@@ -42,6 +42,7 @@
             background-color: white;
             font-size: 15px;
             line-height: 1.5;
+            text-transform: capitalize;
         }
 
         a {
@@ -238,6 +239,15 @@
 
         button.load_more {
             margin-top: 20px;
+        }
+
+        .dropdown-menu {
+            font-size: initial;
+        }
+
+        .dropdown-item.active,
+        .dropdown-item:active {
+            background-color: #00cc83;
         }
     </style>
 
