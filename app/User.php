@@ -16,7 +16,7 @@ class user extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name','last_name','phonenumber', 'email', 'password',
+        'first_name', 'last_name', 'phonenumber', 'email', 'password', 'slug',
     ];
 
     /*
@@ -43,7 +43,8 @@ class user extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function generateToken(){
+    public function generateToken()
+    {
         $this->api_token = str_random(60);
         $this->save();
 
@@ -65,10 +66,11 @@ class user extends Authenticatable
         return $this->hasOne('App\admin', 'user_id', 'id');
     }
 
-    public function isAdmin(){
+    public function isAdmin()
+    {
         if ($this->superAdmin()->exists()) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }

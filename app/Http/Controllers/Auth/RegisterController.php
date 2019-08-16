@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use App\profile;
+use App\Services\Slug;
 
 class RegisterController extends Controller
 {
@@ -66,7 +67,8 @@ class RegisterController extends Controller
         $gender = $faker->randomElement(['male', 'female']);
 
         // dd($data);
-        $user = user::create(['phonenumber' => $data['phonenumber'], 'email' => $data['email'], 'password' => Hash::make($data['password'])]);
+        $slug = Slug::createSlug($data['first_name'], $data['last_name']);
+        $user = user::create(['phonenumber' => $data['phonenumber'], 'email' => $data['email'], 'password' => Hash::make($data['password']), 'slug' => $slug]);
         $profile = profile::create(['user_id' => $user->id, 'first_name' => $data['first_name'], 'last_name' => $data['last_name'], 'gender' => $gender, 'city' => $faker->city(), 'country' => $faker->countryCode(), 'img_src' => $faker->imageUrl()]);
         return $user;
         // return user::create([
@@ -81,7 +83,7 @@ class RegisterController extends Controller
     // generate api token after registration
     protected function registered(Request $request, $user)
     {
-        $user->generateToken();
+        // $user->generateToken();
 
         // return response()->json(['data' => $user->toArray()], 201);
     }

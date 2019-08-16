@@ -35,8 +35,6 @@ class HomeController extends Controller
         if ($request->ajax()) {
 
             if ($request->id != 'start') {
-
-
                 $data = gib::take(10)->where('id', '<', $request->id)->orderBy('id', 'DESC')->get();
             } else {
                 $data = gib::take(10)->orderBy('id', 'DESC')->orderBy('id', 'DESC')->get();

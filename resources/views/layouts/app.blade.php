@@ -249,6 +249,18 @@
         .dropdown-item:active {
             background-color: #00cc83;
         }
+
+        a#createDropDown {
+            padding-top: 13px;
+        }
+
+        a#createDropDown img {
+            height: 14px;
+        }
+
+        ul.navbar-nav.ml-auto {
+            padding-right: 40px;
+        }
     </style>
 
     @yield('script-import')
@@ -303,19 +315,17 @@
 
                         <li class="nav-item dropdown">
                             <a id="createDropDown" class="nav-link dropdown-toggle" href="#" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre
-                                style="padding-top: 13px;">
-                                <img src="{{ asset('img/default/add.png') }}" alt="" sizes="" srcset=""
-                                    style="height: 14px;">
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <img src="{{ asset('img/default/add.png') }}" alt="" sizes="" srcset="">
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="createDropDown">
                                 <a href="" class="dropdown-item">
-                                    Request a gib
+                                    Find a gib ride
                                 </a>
 
                                 <a href="" class="dropdown-item">
-                                    Create a gib
+                                    Create a gib trip
                                 </a>
                                 <a href="" class="dropdown-item">
                                     Add car
@@ -333,14 +343,16 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a href="{{ route('view-profile', ['id'=> \Auth::user()->id]) }}" class="dropdown-item">
+                                <a href="{{ route('view-profile', ['id'=> \Auth::user()->slug]) }}"
+                                    class="dropdown-item">
                                     <span class="signed-in-as dropdown-info">Signed in as </span>
                                     <br>
                                     <span class="user-name  dropdown-info">{{ Auth::user()->profile->first_name }}
                                     </span>
                                 </a>
 
-                                <a href="{{ route('view-profile', ['id'=> \Auth::user()->id]) }}" class="dropdown-item">
+                                <a href="{{ route('view-profile', ['id'=> \Auth::user()->slug]) }}"
+                                    class="dropdown-item">
                                     Your profile
                                 </a>
 

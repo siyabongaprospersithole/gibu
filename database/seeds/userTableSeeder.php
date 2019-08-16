@@ -1,4 +1,5 @@
 <?php
+
 use App\user;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -6,6 +7,7 @@ use App\profile;
 use App\giber;
 use App\driver;
 use App\admin;
+use App\Services\Slug;
 
 class userTableSeeder extends Seeder
 {
@@ -26,6 +28,7 @@ class userTableSeeder extends Seeder
         User::create([
             'phonenumber' => '0613619024',
             'email' => 'sfisohlabisa@gmail.com',
+            'slug' => Slug::createSlug('simphiwe', 'hlabisa'),
             'password' => $password
         ]);
 
@@ -53,14 +56,8 @@ class userTableSeeder extends Seeder
 
 
         //generate few users 10 in total
-        for($i = 2; $i < 10; $i++){
-            User::create([
-                'phonenumber' => $faker->phoneNumber,
-                'email' => $faker->email,
-                'password' => $password
-            ]);
-
-            profile::create([
+        for ($i = 2; $i < 10; $i++) {
+            $user = profile::create([
                 'user_id' => $i,
                 'first_name' => $faker->firstNameMale,
                 'last_name' => $faker->lastName,
@@ -68,6 +65,12 @@ class userTableSeeder extends Seeder
                 'city' => $faker->city,
                 'country' => $faker->countryCode,
                 'img_src' => $faker->imageUrl()
+            ]);
+            User::create([
+                'phonenumber' => $faker->phoneNumber,
+                'email' => $faker->email,
+                'password' => $password,
+                'slug' => Slug::createSlug($user->first_name, $user->last_name)
             ]);
 
             giber::create([
