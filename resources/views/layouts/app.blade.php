@@ -118,9 +118,12 @@
         }
 
         li.nav-item.notification-image {
-            padding-top: 8px;
-            padding-right: 8px;
-            position: relative;
+            padding: 11px;
+            position: relative
+        }
+
+        a#createDropDown {
+            padding: 12px;
         }
 
         li.nav-item.notification-image:hover {
@@ -132,9 +135,9 @@
             background-image: linear-gradient(#00cc83, #00cc83);
             border-radius: 100%;
             height: 10px;
-            left: 10px;
+            left: 25px;
             position: absolute;
-            top: 10px;
+            top: 12px;
             width: 10px;
             z-index: 2;
         }
@@ -250,16 +253,17 @@
             background-color: #00cc83;
         }
 
-        a#createDropDown {
-            padding-top: 13px;
-        }
 
         a#createDropDown img {
-            height: 14px;
+            height: 20px;
         }
 
         ul.navbar-nav.ml-auto {
             padding-right: 40px;
+        }
+
+        .dropdown-toggle:after {
+            display: none
         }
     </style>
 
@@ -272,7 +276,7 @@
             <div class="header-container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img src={{ asset('img/logos/gibu-transparent.png') }} alt="" srcset="" style="
-                    height: 27;
+                    height: 35px;
                 ">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -306,7 +310,7 @@
                                 <span class="notification-status unread">
 
                                 </span>
-                                <img src="{{ asset('img/default/notification.png') }}" style="height: 16px;" alt=""
+                                <img src="{{ asset('img/default/notification.png') }}" style="height: 22px;" alt=""
                                     srcset="">
 
 
@@ -339,7 +343,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 <img style="border-radius: 10px;"
                                     src="https://avatars1.githubusercontent.com/u/12032477?s=40&u=11fc2fd8af37db7df40162e988c76e0956f6db5c&v=4"
-                                    alt="" srcset="" height="20"> <span class="caret"></span>
+                                    alt="" srcset="" height="30px"> <span class="caret"></span>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
