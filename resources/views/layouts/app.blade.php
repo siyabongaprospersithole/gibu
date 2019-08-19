@@ -328,10 +328,10 @@
                                     Find a gib ride
                                 </a>
 
-                                <a href="" class="dropdown-item">
+                                <a href="{{ route('new-trip') }}" class="dropdown-item">
                                     Create a gib trip
                                 </a>
-                                <a href="" class="dropdown-item">
+                                <a href="{{ route('new-car') }}" class="dropdown-item">
                                     Add car
                                 </a>
                             </div>

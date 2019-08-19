@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\car;
 use Illuminate\Http\Request;
 
-class CarController extends Controller
+class cars extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,7 +24,7 @@ class CarController extends Controller
      */
     public function create()
     {
-        //
+        return view('car.create');
     }
 
     /**

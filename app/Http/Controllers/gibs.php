@@ -26,10 +26,10 @@ class gibs extends Controller
      */
     public function create()
     {
-        //
+        return view('gibtrip.create');
     }
 
-        /**
+    /**
      * Get a validator for an incoming registration request.
      *
      * @param  array  $data
@@ -57,12 +57,12 @@ class gibs extends Controller
      */
     public function store(Request $request)
     {
-        $request->merge(['driver_id'=> \Auth::guard('api')->user()->id]);
+        $request->merge(['driver_id' => \Auth::guard('api')->user()->id]);
 
         $validation = $this->validator($request->all());
-        if($validation->fails()){
+        if ($validation->fails()) {
             return $validation->errors()->toJson();
-        }else{
+        } else {
             $gib = gib::create($request->all());
             return response()->json($gib, 201);
         }

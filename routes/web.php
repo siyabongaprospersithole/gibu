@@ -49,3 +49,12 @@ Route::group(['prefix' => 'profile'], function () {
     Route::get('{id}/followers', 'profiles@followers')->name('view-followers');
     Route::get('{id}/following', 'profiles@following')->name('view-following');
 });
+
+Route::group(['prefix' => 'gib-trip'], function () {
+    Route::get('new', 'gibs@create')->name('new-trip');
+});
+
+
+Route::group(['prefix' => 'car'], function () {
+    Route::get('new', 'cars@create')->name('new-car');
+});
