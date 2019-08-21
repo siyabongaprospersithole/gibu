@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class settings extends Controller
 {
-        /**
+    /**
      * Create a new controller instance.
      *
      * @return void
@@ -23,7 +23,9 @@ class settings extends Controller
      */
     public function index()
     {
-        return view('settings.profile');
+        $profile = \Auth::user()->profile;
+        $email = $profile->user->email;
+        return view('settings.profile')->with(['profile' => $profile, 'email' => $email]);
     }
 
     /**

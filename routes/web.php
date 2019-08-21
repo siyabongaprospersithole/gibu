@@ -42,12 +42,12 @@ Route::group(['prefix' => 'notifications'], function () {
 // profile
 
 Route::group(['prefix' => 'profile'], function () {
-    Route::get('{id}', 'profiles@index')->name('view-profile');
-    Route::get('{id}/gibs', 'profiles@gibs')->name('view-gibs');
-    Route::get('{id}/trips', 'profiles@trips')->name('view-trips');
-    Route::get('{id}/cars', 'profiles@cars')->name('view-cars');
-    Route::get('{id}/followers', 'profiles@followers')->name('view-followers');
-    Route::get('{id}/following', 'profiles@following')->name('view-following');
+    Route::get('{id}', 'profileController@index')->name('view-profile');
+    Route::get('{id}/gibs', 'profileController@gibs')->name('view-gibs');
+    Route::get('{id}/trips', 'profileController@trips')->name('view-trips');
+    Route::get('{id}/cars', 'profileController@cars')->name('view-cars');
+    Route::get('{id}/followers', 'profileController@followers')->name('view-followers');
+    Route::get('{id}/following', 'profileController@following')->name('view-following');
 });
 
 Route::group(['prefix' => 'trip'], function () {

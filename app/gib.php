@@ -12,7 +12,7 @@ class gib extends Model
      * @var array
      */
     protected $fillable = [
-        'gibroute_id','driver_id','meetup','price', 'seats','date','time',
+        'gibroute_id', 'driver_id', 'meetup', 'price', 'seats', 'date', 'time', 'special_notice',
     ];
 
     public function driver()

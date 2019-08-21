@@ -88,6 +88,10 @@
         position: absolute;
         width: 240px;
     }
+
+    .alert {
+        margin-bottom: 4px;
+    }
 </style>
 @section('settings-content')
 <div class="Subhead mt-0 mb-0">
@@ -98,24 +102,40 @@
     <div class="col-8" style="padding: 0;
     margin-top: 10px;">
         <form action="" method="post">
-            <div class="md-form">
-                <label for="first_name">Name</label>
-                <i class="fa fa-user prefix grey-text"></i>
-                <input id="first_name" type="text" class="form-control @error('first_name') is-invalid @enderror"
-                    name="first_name" value="{{ old('first_name') }}" required autocomplete="first_name" autofocus>
-                <label for=""></label>
-                @error('first_name')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-                @enderror
+            <div class="md-form row">
+                <div class="col-md">
+                    <label for="first_name">first name</label>
+                    <i class="fa fa-user prefix grey-text"></i>
+                    <input id="first_name" type="text" class="form-control @error('first_name') is-invalid @enderror"
+                        name="first_name" value="{{ $profile->first_name }}" required autocomplete="first_name"
+                        autofocus>
+                    <label for=""></label>
+                    @error('first_name')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                </div>
+                <div class="col-md">
+                    <label for="first_name">last name</label>
+                    <i class="fa fa-user prefix grey-text"></i>
+                    <input id="first_name" type="text" class="form-control @error('first_name') is-invalid @enderror"
+                        name="first_name" value="{{ $profile->last_name }}" required autocomplete="first_name"
+                        autofocus>
+                    <label for=""></label>
+                    @error('first_name')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                </div>
             </div>
 
             <div class="md-form">
                 <label for="email">Public email</label>
                 <i class="fa fa-envelope prefix grey-text"></i>
                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email"
-                    value="{{ old('email') }}" required autocomplete="email">
+                    value="{{ $email }}" required autocomplete="email">
 
                 @error('email')
                 <span class="invalid-feedback" role="alert">
@@ -126,10 +146,10 @@
             </div>
 
             <div class="md-form">
-                <label for="location">Location</label>
+                <label for="location">city</label>
                 <i class="fa fa-envelope prefix grey-text"></i>
                 <input id="location" type="location" class="form-control @error('location') is-invalid @enderror"
-                    name="location" value="{{ old('location') }}" required autocomplete="location">
+                    name="location" value="{{ $profile->city }}" required autocomplete="location">
 
                 @error('location')
                 <span class="invalid-feedback" role="alert">
@@ -157,16 +177,21 @@
 
 
     <div class="col-4 d-inline-block">
+
         <div class="card-user-image" style="float: right; margin-top: 10px;">
+            <div id="alert">
+
+            </div>
             <img width="200" height="200" src="https://www.w3schools.com/w3images/team2.jpg" alt="John"
-                style="object-fit: cover; ">
+                style="object-fit: cover; " id="user-avatar">
 
             <div class="change-imgage-text">
                 <div class="avatar-upload">
                     <label class="position-relative upload button-change-avatar mt-3">
                         Upload new picture
                         <input type="file"
-                            class="manual-file-chooser width-full height-full ml-0 js-manual-file-chooser left-0 top-0 position-absolute">
+                            class="manual-file-chooser width-full height-full ml-0 js-manual-file-chooser left-0 top-0 position-absolute"
+                            onchange="uploadAvatar(this)" name="avatar" id="avatar">
                     </label>
 
                     <div class="upload-state loading">
@@ -193,5 +218,25 @@
         var i = 0;
             $("#memnav a").eq(i).addClass('selected');
         });
+
+        function uploadAvatar(input){
+            var url = input.value;
+            var ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
+            if (input.files && input.files[0]&& (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                $('#user-avatar').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+                $('#alert').html('<div class="alert alert-success ">Avatar Uploaded</div>');
+                }else{
+                // $('#user-avatar').attr('src', '/assets/no_preview.png');
+                console.log('wrong-image');
+                $('#alert').html('<div class="alert alert-danger "><strong>image</strong> type error <button type="button" class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span></button></div>');
+                }
+            // console.log(input);
+        }
 </script>
 @endsection

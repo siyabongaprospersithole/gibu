@@ -27,6 +27,7 @@ class gibTableSeeder extends Seeder
                 'price' => $faker->randomNumber,
                 'seats' => $faker->randomNumber,
                 'date' => $faker->date(),
+                'special_note' => $faker->realText(50),
                 'time' => $faker->time()
             ]);
         }

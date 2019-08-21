@@ -43,18 +43,18 @@ class HomeController extends Controller
             $output = '';
             $last_id = '';
 
+            $moenyIconPath = asset('\img\default\money.png');
             if (!$data->isEmpty()) {
                 foreach ($data as $gib) {
                     $output .= '
         <div class="card gibu-card" >
                 <div class="card-body">
-                    <h5 class="card-title">' . $gib->route->source . '</h5>
+                    <h5 class="card-title"> <div class="left">' . $gib->route->source . '</div><div class="right"> R <span class="price-tag">' . $gib->price . '.00</span></div></h5>
                     <h6 class="card-subtitle mb-2 text-muted">To</h6>
                     <h6 class="card-title">' . $gib->route->destination . '</h6>
 
                     <h6 class="card-subtitle mb-2 text-muted">Driver <span class="driver-name"></span> ' . $gib->driver->user->profile->first_name . ' ' .  $gib->driver->user->profile->last_name . ' </span></h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card</p>
+                    <p class="card-text">' . $gib->special_note . '</p>
                     <a href="#" class="card-link">View</a>
                     <a href="#" class="card-link">Book</a>
 

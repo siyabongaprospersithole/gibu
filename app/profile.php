@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class profile extends Model
 {
-        /**
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'user_id','first_name','last_name','gender','city','country','img_src',
+        'user_id', 'first_name', 'last_name', 'gender', 'city', 'country', 'img_src',
     ];
     // Profile::create([
     //     'user_id'           =>  $faker->randomDigit,
@@ -27,6 +27,6 @@ class profile extends Model
 
     public function user()
     {
-        return $this->belongsTo('App\User', 'foreign_key', 'other_key');
+        return $this->belongsTo('App\User', 'user_id', 'id');
     }
 }

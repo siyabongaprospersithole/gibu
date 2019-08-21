@@ -4,6 +4,14 @@
         margin: 10px;
     }
 
+    .right {
+        float: right;
+    }
+
+    .left {
+        float: left;
+    }
+
     .container {
         margin: auto;
     }
@@ -46,6 +54,11 @@
 
     #post_data {
         display: inline;
+    }
+
+    h5.card-title {
+        width: 100%;
+        height: 25px;
     }
 </style>
 @section('content')
