@@ -50,8 +50,9 @@ Route::group(['prefix' => 'profile'], function () {
     Route::get('{id}/following', 'profiles@following')->name('view-following');
 });
 
-Route::group(['prefix' => 'gib-trip'], function () {
+Route::group(['prefix' => 'trip'], function () {
     Route::get('new', 'gibs@create')->name('new-trip');
+    Route::post('store', 'gibs@store')->name('post.new.trip');
 });
 
 

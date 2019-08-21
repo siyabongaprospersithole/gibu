@@ -1,11 +1,6 @@
 @extends('layouts.app')
 <style>
-    .new-gibtrip-container {
-        margin: 40px auto 0;
-        width: 700px;
-    }
-
-    .new-gibtrip-container .Subhead {
+    .Subhead {
         margin-bottom: 30px;
     }
 

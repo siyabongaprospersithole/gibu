@@ -18,8 +18,8 @@ class driver extends Model
         return $this->hasMany('App\gib', 'driver_id', 'id');
     }
 
-    public function car()
+    public function cars()
     {
-        return $this->hasOne('App\car', 'driver_id', 'id');
+        return $this->hasMany('App\car', 'driver_id', 'id');
     }
 }

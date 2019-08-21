@@ -19,10 +19,10 @@ class gibTableSeeder extends Seeder
 
 
         // make 10 runs
-        for($i = 0; $i < 10; $i++){
+        for ($i = 0; $i < 10; $i++) {
             gib::create([
-                'gibroute_id' => $faker->numberBetween(1,49),
-                'driver_id' => $faker->numberBetween(1,10),
+                'gibroute_id' => $faker->numberBetween(1, 50),
+                'driver_id' => $faker->numberBetween(1, 9),
                 'meetup' => $faker->city,
                 'price' => $faker->randomNumber,
                 'seats' => $faker->randomNumber,

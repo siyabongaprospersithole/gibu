@@ -26,7 +26,8 @@ class gibs extends Controller
      */
     public function create()
     {
-        return view('gibtrip.create');
+        $cars = \Auth::user()->driver->cars;
+        return view('gibtrip.create')->with('cars',  $cars);
     }
 
     /**
@@ -57,6 +58,7 @@ class gibs extends Controller
      */
     public function store(Request $request)
     {
+        \dd($request);
         $request->merge(['driver_id' => \Auth::guard('api')->user()->id]);
 
         $validation = $this->validator($request->all());

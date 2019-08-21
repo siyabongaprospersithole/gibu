@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
         $this->call(gibTableSeeder::class);
         $this->call(gibTripTableSeeder::class);
         $this->call(gibRouteTableSeeder::class);
+        $this->call(carTableSeeder::class);
     }
 }
