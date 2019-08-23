@@ -27,8 +27,11 @@ Route::group(['prefix' => 'settings'], function () {
     Route::get('profile', 'settings@index')->name('settings');
     Route::get('account', 'settings@account')->name('account');
     Route::get('security', 'settings@security')->name('security');
+    Route::post('security', 'settings@changePassword')->name('security.changePassword');
     Route::get('emails', 'settings@emails')->name('emails');
     Route::get('notifications', 'settings@notifications')->name('notifications');
+    Route::get('cards', 'settings@cards')->name('cards');
+    Route::post('profile', 'settings@uploadAvatar')->name('upload.avatar');
 });
 
 // notifications

@@ -93,6 +93,7 @@
         margin-bottom: 4px;
     }
 </style>
+
 @section('settings-content')
 <div class="Subhead mt-0 mb-0">
     <h2 id="public-profile-heading" class="Subhead-heading">Public profile</h2>
@@ -102,6 +103,7 @@
     <div class="col-8" style="padding: 0;
     margin-top: 10px;">
         <form action="" method="post">
+            @csrf
             <div class="md-form row">
                 <div class="col-md">
                     <label for="first_name">first name</label>
@@ -221,22 +223,46 @@
 
         function uploadAvatar(input){
             var url = input.value;
+            var token = $('input[name="_token"]').val();
+            console.log(token)
+
             var ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
             if (input.files && input.files[0]&& (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) {
-                var reader = new FileReader();
+                ajaxRequest(input,token)
+                // return
+                // var reader = new FileReader();
 
-                reader.onload = function (e) {
-                $('#user-avatar').attr('src', e.target.result);
-                }
+                // reader.onload = function (e) {
+                // $('#user-avatar').attr('src', e.target.result);
+                // }
 
-                reader.readAsDataURL(input.files[0]);
-                $('#alert').html('<div class="alert alert-success ">Avatar Uploaded</div>');
-                }else{
-                // $('#user-avatar').attr('src', '/assets/no_preview.png');
-                console.log('wrong-image');
-                $('#alert').html('<div class="alert alert-danger "><strong>image</strong> type error <button type="button" class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span></button></div>');
+                // reader.readAsDataURL(input.files[0]);
+                // $('#alert').html('<div class="alert alert-success ">Avatar Uploaded</div>');
                 }
+                // else{
+                // // $('#user-avatar').attr('src', '/assets/no_preview.png');
+                // console.log('wrong-image');
+                // $('#alert').html('<div class="alert alert-danger "><strong>image</strong> type error <button type="button" class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span></button></div>');
+                // }
             // console.log(input);
+        }
+
+        function ajaxRequest(file, token){
+
+            console.log(file.files[0])
+            console.log(token)
+            $.ajax({
+                url: "{{ route('upload.avatar') }}",
+                method: "POST",
+                data: {_token: token, select_file: "sim"},
+                dataType:'JSON',
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function(data){
+                    console.log(data)
+                }
+            });
         }
 </script>
 @endsection

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\profile;
 use Illuminate\Http\Request;
 
-class profiles extends Controller
+class profileController extends Controller
 {
     /**
      * Create a new controller instance.

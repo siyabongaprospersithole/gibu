@@ -24,6 +24,12 @@
         font-size: 14px;
     }
 </style>
+@section('script-import')
+<script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
+@endsection
 @section('content')
 @yield('gibtrip-content')
+@endsection
+@section('script')
+
 @endsection

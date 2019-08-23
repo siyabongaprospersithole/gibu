@@ -176,3 +176,9 @@
     </div>
 </div>
 @endsection
+
+@section('script')
+<script>
+    var test
+</script>
+@endsection

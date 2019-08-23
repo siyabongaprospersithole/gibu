@@ -53,7 +53,10 @@
 </style>
 @section('script-import')
 <script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
+<script src="{{ asset('js/datepicker.js') }}"></script>
+<link rel="stylesheet" href="{{ asset('css/datepicker.css') }}">
 @endsection
+
 @section('content')
 <div class="page-content container-xl clearfix">
     <div class="col-3 float-left pr-4">

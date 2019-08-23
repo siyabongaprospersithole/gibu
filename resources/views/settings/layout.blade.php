@@ -59,6 +59,8 @@
                             class="float-right badge badge-light round">12</span> </a>
                     <a href="{{ route('notifications') }}" class="list-group-item">Notifications<span
                             class="float-right badge badge-light round">3</span> </a>
+                    <a href="{{ route('cards') }}" class="list-group-item">cards<span
+                            class="float-right badge badge-light round">3</span> </a>
                 </div> <!-- list-group .// -->
             </div>
         </div>
